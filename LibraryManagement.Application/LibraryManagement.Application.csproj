@@ -8,4 +8,20 @@
     <ProjectReference Include="..\LibraryManagement.Domain\LibraryManagement.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Books\" />
+    <Folder Include="Features\Authors\" />
+    <Folder Include="Features\Libraries\Commands\CreateLibrary\" />
+    <Folder Include="Features\Libraries\Commands\DeleteLibrary\" />
+    <Folder Include="Features\Libraries\Commands\UpdateLibrary\" />
+    <Folder Include="Features\Libraries\Queries\GetLibrariesByLocation\" />
+    <Folder Include="Features\Publishers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
 </Project>
