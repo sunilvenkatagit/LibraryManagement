@@ -6,7 +6,8 @@ namespace LibraryManagement.Application.Contracts.Persistence
 {
     public interface ILibraryRepository : IAsyncRepository<Library>
     {
-        Task<List<Library>> GetLibrariesByLocation(string location, int page = 1, int size = 5);
+        Task<List<Library>> GetLibrariesByLocation(string location, int page, int size);
+        Task<List<Library>> GetLibrariesWithBooks();
         Task<bool> IsLibraryNameUnique(string name);
     }
 }
