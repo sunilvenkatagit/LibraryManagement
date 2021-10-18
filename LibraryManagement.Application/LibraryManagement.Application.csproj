@@ -14,7 +14,6 @@
     <Folder Include="Features\Libraries\Commands\CreateLibrary\" />
     <Folder Include="Features\Libraries\Commands\DeleteLibrary\" />
     <Folder Include="Features\Libraries\Commands\UpdateLibrary\" />
-    <Folder Include="Features\Libraries\Queries\GetLibrariesByLocation\" />
     <Folder Include="Features\Publishers\" />
   </ItemGroup>
 
