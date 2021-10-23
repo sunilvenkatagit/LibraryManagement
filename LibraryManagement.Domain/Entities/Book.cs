@@ -13,7 +13,7 @@ namespace LibraryManagement.Domain.Entities
         public DateTime? DateAdded { get; set; }
         public Guid PulisherId { get; set; }
         public Publisher Publisher { get; set; }
-        public ICollection<Author> Authors { get; set; }
-        public ICollection<Library> Libraries { get; set; }
+        public ICollection<Book_Author> Authors { get; set; }
+        public ICollection<Library_Book> Libraries { get; set; }
     }
 }

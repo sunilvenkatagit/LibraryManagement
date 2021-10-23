@@ -9,6 +9,6 @@ namespace LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesW
         public string Name { get; set; }
         public string Location { get; set; }
         public DateTime? EstablishedDate { get; set; }
-        public ICollection<LibraryBookDto> Books { get; set; }
+        public ICollection<Library_BookDto> Books { get; set; }
     }
 }
