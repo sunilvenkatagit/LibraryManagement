@@ -20,7 +20,7 @@ namespace LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesW
 
         public async Task<List<LibraryBookListVm>> Handle(GetLibrariesWithBooksQuery request, CancellationToken cancellationToken)
         {
-            var librariesWithBooks = await _libraryRepository.GetLibrariesWithBooks();
+            var librariesWithBooks = await _libraryRepository.GetLibraryWithBooks(request.LibraryId);
             return _mapper.Map<List<LibraryBookListVm>>(librariesWithBooks);
         }
     }
