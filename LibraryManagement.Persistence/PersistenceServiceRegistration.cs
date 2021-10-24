@@ -15,6 +15,7 @@ namespace LibraryManagement.Persistence
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<ILibraryRepository, LibraryRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
 
             return services;
         }

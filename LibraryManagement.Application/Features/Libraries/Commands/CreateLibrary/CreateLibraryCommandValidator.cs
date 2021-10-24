@@ -35,7 +35,6 @@ namespace LibraryManagement.Application.Features.Libraries.Commands.CreateLibrar
 
         private async Task<bool> LibraryNameUnique(CreateLibraryCommand lb, CancellationToken token)
         {
-            //TODO Add comments here!
             return !(await _libraryRepository.IsLibraryNameUnique(lb.Name));
         }
     }

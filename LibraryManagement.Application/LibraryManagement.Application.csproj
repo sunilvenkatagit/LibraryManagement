@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Books\" />
     <Folder Include="Features\Authors\" />
     <Folder Include="Features\Publishers\" />
   </ItemGroup>

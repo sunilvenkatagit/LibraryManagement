@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using LibraryManagement.Application.Features.Books.Commands.CreateBook;
+using LibraryManagement.Application.Features.Books.Queries.GetBooksByGenre;
 using LibraryManagement.Application.Features.Libraries.Commands.CreateLibrary;
 using LibraryManagement.Application.Features.Libraries.Commands.DeleteLibrary;
 using LibraryManagement.Application.Features.Libraries.Commands.UpdateLibrary;
@@ -15,12 +17,15 @@ namespace LibraryManagement.Application.Profiles
         {
             CreateMap<Library, LibraryListVm>().ReverseMap();
             CreateMap<Library, LibraryListLocationVm>().ReverseMap();
-            CreateMap<Book, BookInLibraryDto>().ReverseMap();
             CreateMap<Library_Book, Library_BookDto>().ReverseMap();
             CreateMap<Library, LibraryBookListVm>().ReverseMap();
             CreateMap<Library, CreateLibraryCommand>().ReverseMap();
             CreateMap<Library, UpdateLibraryCommand>().ReverseMap();
             CreateMap<Library, DeleteLibraryCommand>().ReverseMap();
+            CreateMap<Book, BookInLibraryDto>().ReverseMap();
+
+            CreateMap<Book, BookListGenreVm>().ReverseMap();
+            CreateMap<Book, CreateBookCommand>().ReverseMap();
         }
     }
 }
