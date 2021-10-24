@@ -42,7 +42,7 @@ namespace LibraryManagement.Api.Controllers
 
         [HttpGet("byLocation", Name = "GetLibrariesByLocation")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<List<LibraryListLocationVm>>> GetLibrariesByLocation(string location, int page, int size)
+        public async Task<ActionResult<List<LibraryListLocationVm>>> GetLibrariesByLocation(string location, int page = 1, int size = 5)
         {
             var requestQuery = new GetLibrariesByLocationQuery() { Location = location, Page = page, Size = size };
 
