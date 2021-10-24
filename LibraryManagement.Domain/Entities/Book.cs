@@ -11,9 +11,10 @@ namespace LibraryManagement.Domain.Entities
         public string Description { get; set; }
         public string Genre { get; set; }
         public DateTime? DateAdded { get; set; }
-        public Guid PulisherId { get; set; }
+        public ICollection<Author> Authors { get; set; }
+        public Guid PublisherId { get; set; }
         public Publisher Publisher { get; set; }
-        public ICollection<Book_Author> Authors { get; set; }
-        public ICollection<Library_Book> Libraries { get; set; }
+        public Guid LibraryId { get; set; }
+        public Library Library { get; set; }
     }
 }

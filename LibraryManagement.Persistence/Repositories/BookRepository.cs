@@ -18,12 +18,12 @@ namespace LibraryManagement.Persistence.Repositories
         public async Task<List<Book>> GetAllBooksByAuthor(Guid authorId)
         {
             var books = await _dbContext.Books.Include(b => b.Authors).ToListAsync();
-            var book_authors = await _dbContext.Books_Authors.Include(b => b.Author).ToListAsync();
+            /*var book_authors = await _dbContext.Books_Authors.Include(b => b.Author).ToListAsync();
 
             foreach (Book book in books)
             {
                 book.Authors = book_authors.Where(ba => ba.BookId == book.BookId).ToList();
-            }
+            }*/
 
             return books;
         }

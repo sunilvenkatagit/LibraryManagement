@@ -9,6 +9,6 @@ namespace LibraryManagement.Domain.Entities
         public Guid AuthorId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ICollection<Book_Author> Books { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }

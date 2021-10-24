@@ -17,7 +17,6 @@ namespace LibraryManagement.Application.Profiles
         {
             CreateMap<Library, LibraryListVm>().ReverseMap();
             CreateMap<Library, LibraryListLocationVm>().ReverseMap();
-            CreateMap<Library_Book, Library_BookDto>().ReverseMap();
             CreateMap<Library, LibraryBookListVm>().ReverseMap();
             CreateMap<Library, CreateLibraryCommand>().ReverseMap();
             CreateMap<Library, UpdateLibraryCommand>().ReverseMap();
