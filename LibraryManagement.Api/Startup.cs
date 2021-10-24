@@ -1,3 +1,4 @@
+using LibraryManagement.Api.Middleware;
 using LibraryManagement.Application;
 using LibraryManagement.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -54,6 +55,7 @@ namespace LibraryManagement.Api
 
             app.UseRouting();
 
+            app.UseCustomExceptionHandler();
             app.UseCors("Open");
 
             app.UseAuthorization();

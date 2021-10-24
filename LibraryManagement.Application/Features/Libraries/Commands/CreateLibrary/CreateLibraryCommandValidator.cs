@@ -18,19 +18,19 @@ namespace LibraryManagement.Application.Features.Libraries.Commands.CreateLibrar
             RuleFor(lb => lb.Name)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MaximumLength(50).WithMessage("{PropertyName must not exceed 50 characters.}");
+                .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.");
 
             RuleFor(lb => lb.Location)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MaximumLength(50).WithMessage("{PropertyName must not exceed 50 characters.}");
+                .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.");
 
             RuleFor(lb => lb.EstablishedDate)
                 .LessThanOrEqualTo(DateTime.Now);
 
             RuleFor(lb => lb)
                 .MustAsync(LibraryNameUnique)
-                .WithMessage("A librray with the same name exists already.");            
+                .WithMessage("A library with the same name exists already.");            
         }
 
         private async Task<bool> LibraryNameUnique(CreateLibraryCommand lb, CancellationToken token)
