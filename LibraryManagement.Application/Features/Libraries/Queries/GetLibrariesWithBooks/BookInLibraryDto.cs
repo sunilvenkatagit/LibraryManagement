@@ -2,9 +2,8 @@
 
 namespace LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesWithBooks
 {
-    public class LibraryBookDto
+    public class BookInLibraryDto
     {
-        public Guid BookId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
