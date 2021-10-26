@@ -32,11 +32,11 @@ namespace LibraryManagement.Application.Features.Books.Commands.CreateBook
             RuleFor(b => b.DateAdded)
                 .LessThanOrEqualTo(DateTime.Now);
 
-            RuleFor(b => b.PulisherId)
+            RuleFor(b => b.PublisherId)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
 
-            RuleFor(b => b.AuthorId)
+            RuleFor(b => b.AuthorIds)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
 

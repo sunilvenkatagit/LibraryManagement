@@ -32,6 +32,7 @@ namespace LibraryManagement.Api.Controllers
 
         [HttpPost(Name = "AddBook")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateBookCommand createBookCommand)
         {
             var id = await _mediator.Send(createBookCommand);
