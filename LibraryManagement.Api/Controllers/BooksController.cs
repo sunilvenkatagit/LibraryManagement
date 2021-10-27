@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Application.Features.Books.Commands.CreateBook;
+using LibraryManagement.Application.Features.Books.Commands.DeleteBook;
 using LibraryManagement.Application.Features.Books.Queries.GetBooksByGenre;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -37,6 +38,15 @@ namespace LibraryManagement.Api.Controllers
         {
             var id = await _mediator.Send(createBookCommand);
             return Ok(id);
+        }
+
+        [HttpDelete("{id}", Name = "DeleteBook")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            await _mediator.Send(new DeleteBoookCommand() { BookId = id });
+            return NoContent();
         }
     }
 }

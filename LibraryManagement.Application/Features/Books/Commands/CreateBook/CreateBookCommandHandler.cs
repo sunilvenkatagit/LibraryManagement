@@ -44,8 +44,7 @@ namespace LibraryManagement.Application.Features.Books.Commands.CreateBook
             if (library == null)
                 throw new BadRequestException($"There is no library with Id: {request.LibraryId}");
 
-            var listOfAuthors = new List<Author>() {  };
-            
+            var listOfAuthors = new List<Author>() {  };            
             foreach (var id in request.AuthorIds)
             {
                 var author = await _authorRepository.GetByIdAsync(id);
