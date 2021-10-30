@@ -5,6 +5,6 @@ namespace LibraryManagement.Application.Contracts.Persistence
 {
     public interface IAuthorRepository : IAsyncRepository<Author>
     {
-        Task<bool> IsAuthorNameUnique();
+        Task<bool> IsAuthorNameUnique(string name);
     }
 }
