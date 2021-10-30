@@ -1,7 +1,7 @@
 ﻿using LibraryManagement.Application.Contracts.Persistence;
-using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesWithBooks;
 using LibraryManagement.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace LibraryManagement.Persistence.Repositories
 
         }
 
-        public async Task<List<Library>> GetLibrariesByLocation(string location, int page, int size)
+        public async Task<List<Library>> GetAllLibrariesByLocation(string location, int page, int size)
         {
             return await _dbContext.Libraries.Where(lb => lb.Location == location)
                                              .Skip((page - 1) * size)
@@ -24,15 +24,9 @@ namespace LibraryManagement.Persistence.Repositories
                                              .ToListAsync();
         }
 
-        public async Task<List<Library>> GetLibrariesWithBooks()
+        public async Task<List<Library>> GetLibraryWithBooks(Guid libraryId)
         {
-            var libraries = await _dbContext.Libraries.Include(lb => lb.Books).ToListAsync();
-            var library_books = await _dbContext.Libraries_Books.Include(lb => lb.Book).ToListAsync();
-
-            foreach (var library in libraries)
-            {
-                library.Books = library_books.Where(lb => lb.LibraryId == library.LibraryId).ToList();
-            }
+            var libraries = await _dbContext.Libraries.Where(l => l.LibraryId == libraryId).Include(lb => lb.Books).ToListAsync();
 
             return libraries;
         }

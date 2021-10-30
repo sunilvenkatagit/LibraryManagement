@@ -2,7 +2,7 @@
 
 namespace LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesWithBooks
 {
-    public class BookInLibraryDto
+    public class LibraryBookDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

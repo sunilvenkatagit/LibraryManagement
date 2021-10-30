@@ -20,7 +20,7 @@ namespace LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesB
 
         public async Task<List<LibraryListLocationVm>> Handle(GetLibrariesByLocationQuery request, CancellationToken cancellationToken)
         {
-            var libraries = await _libraryRepository.GetLibrariesByLocation(request.Location, page: 1, size: 5);
+            var libraries = await _libraryRepository.GetAllLibrariesByLocation(request.Location, request.Page, request.Size);
             return _mapper.Map<List<LibraryListLocationVm>>(libraries);
         }
     }

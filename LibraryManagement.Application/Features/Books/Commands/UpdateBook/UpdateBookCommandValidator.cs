@@ -4,13 +4,13 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LibraryManagement.Application.Features.Books.Commands.CreateBook
+namespace LibraryManagement.Application.Features.Books.Commands.UpdateBook
 {
-    public class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
+    public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
     {
         private readonly IBookRepository _bookRepository;
 
-        public CreateBookCommandValidator(IBookRepository bookRepository)
+        public UpdateBookCommandValidator(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
 
@@ -49,7 +49,7 @@ namespace LibraryManagement.Application.Features.Books.Commands.CreateBook
                 .WithMessage("A book with the same name exists already.");
         }
 
-        private async Task<bool> BookNameUnique(CreateBookCommand b, CancellationToken token)
+        private async Task<bool> BookNameUnique(UpdateBookCommand b, CancellationToken token)
         {
             return !(await _bookRepository.IsBookNameUnique(b.Name));
         }

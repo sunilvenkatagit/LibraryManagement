@@ -32,19 +32,19 @@ namespace LibraryManagement.Api.Controllers
             return Ok(libraries);
         }
 
-        [HttpGet("allWithBooks", Name = "GetLibrariesWithBooks")]
+        [HttpGet("{id}", Name = "GetLibrariesWithBooks")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<List<LibraryBookListVm>>> GetLibrariesWithBooks()
+        public async Task<ActionResult<List<LibraryBookListVm>>> GetLibraryWithBooks(Guid id)
         {
-            var librariesWithBooks = await _mediator.Send(new GetLibrariesWithBooksQuery());
+            var librariesWithBooks = await _mediator.Send(new GetLibrariesWithBooksQuery() { LibraryId = id });
             return Ok(librariesWithBooks);
         }
 
-        [HttpGet("allByLocation", Name = "GetLibrariesByLocation")]
+        [HttpGet("byLocation", Name = "GetLibrariesByLocation")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<List<LibraryListLocationVm>>> GetLibrariesByLocation(string location)
+        public async Task<ActionResult<List<LibraryListLocationVm>>> GetLibrariesByLocation(string location, int page = 1, int size = 5)
         {
-            var requestQuery = new GetLibrariesByLocationQuery() { Location = location };
+            var requestQuery = new GetLibrariesByLocationQuery() { Location = location, Page = page, Size = size };
 
             var librariesByLocation = await _mediator.Send(requestQuery);
             return Ok(librariesByLocation);

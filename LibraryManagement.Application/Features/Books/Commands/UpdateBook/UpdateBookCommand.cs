@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace LibraryManagement.Application.Features.Books.Commands.CreateBook
+namespace LibraryManagement.Application.Features.Books.Commands.UpdateBook
 {
-    public class CreateBookCommand : IRequest<Guid>
+    public class UpdateBookCommand : IRequest
     {
+        public Guid BookId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }

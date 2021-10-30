@@ -10,6 +10,6 @@ namespace LibraryManagement.Domain.Entities
         public string Name { get; set; }
         public string Location { get; set; }
         public DateTime? EstablishedDate { get; set; }
-        public ICollection<Library_Book> Books { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }
