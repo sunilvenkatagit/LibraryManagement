@@ -15,15 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{AA38C903-63AE-4786-82E2-CC3E5FA7F29F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Domain", "LibraryManagement.Domain\LibraryManagement.Domain.csproj", "{2828BEA0-1BCA-42DC-9CAF-9607EF53CC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Domain", "LibraryManagement.Domain\LibraryManagement.Domain.csproj", "{2828BEA0-1BCA-42DC-9CAF-9607EF53CC8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Application", "LibraryManagement.Application\LibraryManagement.Application.csproj", "{58C5E6A8-06B3-41D1-B122-3CC6F56AD921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Application", "LibraryManagement.Application\LibraryManagement.Application.csproj", "{58C5E6A8-06B3-41D1-B122-3CC6F56AD921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Infrastructure", "LibraryManagement.Infrastructure\LibraryManagement.Infrastructure.csproj", "{10762EE8-9F5E-4AF8-86D4-072E91C4CEAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Infrastructure", "LibraryManagement.Infrastructure\LibraryManagement.Infrastructure.csproj", "{10762EE8-9F5E-4AF8-86D4-072E91C4CEAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Persistence", "LibraryManagement.Persistence\LibraryManagement.Persistence.csproj", "{20FB2C5F-C48B-4606-88D6-CAA66AE466B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Persistence", "LibraryManagement.Persistence\LibraryManagement.Persistence.csproj", "{20FB2C5F-C48B-4606-88D6-CAA66AE466B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Api", "LibraryManagement.Api\LibraryManagement.Api.csproj", "{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.Api", "LibraryManagement.Api\LibraryManagement.Api.csproj", "{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Identity", "LibraryManagement.Identity\LibraryManagement.Identity.csproj", "{11BA49CF-D7CC-4EAD-883D-8C0E98407412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BA49CF-D7CC-4EAD-883D-8C0E98407412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BA49CF-D7CC-4EAD-883D-8C0E98407412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BA49CF-D7CC-4EAD-883D-8C0E98407412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BA49CF-D7CC-4EAD-883D-8C0E98407412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{10762EE8-9F5E-4AF8-86D4-072E91C4CEAF} = {0EBD1FEA-A547-4B7E-8084-4FC6D53F3587}
 		{20FB2C5F-C48B-4606-88D6-CAA66AE466B7} = {0EBD1FEA-A547-4B7E-8084-4FC6D53F3587}
 		{C42024BE-A99C-456F-A9C5-ED58CFB4C4E9} = {4B468A65-F985-411A-A1A0-5E0982B71FEA}
+		{11BA49CF-D7CC-4EAD-883D-8C0E98407412} = {0EBD1FEA-A547-4B7E-8084-4FC6D53F3587}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F9C550C-A047-4526-84E1-D3C4449FA024}
