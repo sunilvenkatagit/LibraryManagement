@@ -5,6 +5,7 @@ using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesByLoc
 using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesList;
 using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesWithBooks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,7 @@ namespace LibraryManagement.Api.Controllers
             _mediator = mediator;
         }
 
+        [Authorize]
         [HttpGet("all", Name = "GetAllLibraries")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<LibraryListVm>>> GetAllLibraries()

@@ -1,19 +1,13 @@
+using LibraryManagement.Api.Extensions;
 using LibraryManagement.Api.Middleware;
 using LibraryManagement.Application;
+using LibraryManagement.Identity;
 using LibraryManagement.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LibraryManagement.Api
 {
@@ -31,14 +25,12 @@ namespace LibraryManagement.Api
         {
             services.AddApplicationServives();
             services.AddPeristenceServices(Configuration);
+            services.AddIdentityServices(Configuration);
 
-            services.AddCors(options => options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+            services.AddCorsPolicyServices();
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LibraryManagement.Api", Version = "v1" });
-            });
+            services.AddSwaggerServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +46,7 @@ namespace LibraryManagement.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseCustomExceptionHandler();
             app.UseCors("Open");
