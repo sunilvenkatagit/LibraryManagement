@@ -10,6 +10,7 @@ using LibraryManagement.Application.Features.Libraries.Commands.UpdateLibrary;
 using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesByLocation;
 using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesList;
 using LibraryManagement.Application.Features.Libraries.Queries.GetLibrariesWithBooks;
+using LibraryManagement.Application.Features.Publishers.Commands.CreatePublisher;
 using LibraryManagement.Domain.Entities;
 
 namespace LibraryManagement.Application.Profiles
@@ -32,6 +33,8 @@ namespace LibraryManagement.Application.Profiles
 
             CreateMap<Author, CreateAuthorCommand>().ReverseMap();
             CreateMap<Author, DeleteAuthorCommand>().ReverseMap();
+
+            CreateMap<Publisher, CreatePublisherCommand>().ReverseMap();
         }
     }
 }

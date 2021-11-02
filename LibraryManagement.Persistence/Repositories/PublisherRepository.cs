@@ -1,6 +1,6 @@
 ﻿using LibraryManagement.Application.Contracts.Persistence;
 using LibraryManagement.Domain.Entities;
-using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LibraryManagement.Persistence.Repositories
@@ -12,9 +12,10 @@ namespace LibraryManagement.Persistence.Repositories
 
         }
 
-        public Task<bool> IsPublisherNameUnique()
+        public Task<bool> IsPublisherNameUnique(string name)
         {
-            throw new NotImplementedException();
+            var matches = _dbContext.Publishers.Any(p => p.Name.ToLower() == name.ToLower());
+            return Task.FromResult(matches);
         }
     }
 }
